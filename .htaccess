@@ -1,0 +1,16 @@
+Options +FollowSymLinks
+#executa se o rewrite estiver ligado
+RewriteEngine On
+#define o diretório base do projeto
+RewriteBase /novoarquivamento/
+#verifica se o arquivo existe
+RewriteCond %{REQUEST_FILENAME} !-f
+#verifica se o diretório existe
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(([a-zA-Z0-9_.-]+)[/]?)(([a-zA-Z0-9_.-]+)[/]?)?(([a-zA-Z0-9_.-]+)[/]?)?([a-zA-Z0-9_.-]+)?[/]?(.*)?$ index.php?%1&idempresa=$2&module=$4&controller=$6&action=$7&opq=$8
+php_value upload_max_filesize 1000M
+php_value post_max_size 1000M
+php_value session.cookie_lifetime 0
+php_value session.gc_maxlifetime 1440
