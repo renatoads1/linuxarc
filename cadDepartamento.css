@@ -1,0 +1,222 @@
+
+body{
+    background-color: #D4E9F7;
+}
+#dv_id{
+    display:none;
+}
+#frmcadDepartamento{
+    display:none;
+}
+.panel-body #field_id{
+    display:none;
+}
+#footer{
+    display:none;
+}
+/*renato*/
+#todo
+{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6-*/
+  -webkit-border-radius: 12px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 12px; 
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 12px;
+}
+#grid{
+   padding: 10px;
+    box-shadow: inset 1px 1px 5px 3px rgba(255,255,255,0.7);    
+    border-radius:  10px 10px 10px 10px; 
+}
+.staGrid{
+    border:solid 0px #fff;
+}
+/*renato*/
+#input-group input-group-sm{
+    border: 5px solid pink;
+}
+/*renato*/
+i.fa.fa-pencil{
+    color: rgba(200,200,20, 0.8);
+    font-size: 18px;
+    margin-left: 25%;
+    margin-top: 5px;
+        
+}
+i.fa.fa-pencil:hover{
+    color: rgba(234,184,9, 0.9);
+    text-shadow: 2px 2px 4px #ffffff;
+    font-size: 22px;
+    margin-left: 25%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#fa-plus{
+    color: rgba(44,44,100, 0.4);
+    font-size: 18px;
+    margin-left: 25%;
+    margin-top: 5px;        
+}
+#fa-plus:hover{
+    color: blue;
+    text-shadow: 2px 2px 4px #ffffff;
+    font-size: 22px;
+    margin-left: 25%;
+    margin-top: 5px;
+    cursor: pointer;       
+}
+#fa-close{
+    color: rgba(200,44,100, 0.4);
+    font-size: 18px;
+    margin-left: 25%;
+    margin-top: 5px;        
+}
+#fa-close:hover{
+    color: red;
+    text-shadow: 2px 2px 4px #ffffff;
+    font-size: 22px;
+    margin-left: 25%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#input-group input-group-sm{
+    border: 5px solid pink;
+}
+/*renato*/
+#cabecalio{
+/*    border:1px solid rgba(210,210,210,0.7);*/
+    margin-top: 10px;
+/*    border: 1px solid;*/
+    padding: 10px;
+    box-shadow: inset 1px 1px 5px 3px rgba(255,255,255,0.7);    
+    border-radius:  10px 10px 10px 10px;
+}
+nav#navbar-scroll {
+	background: linear-gradient(rgb(194, 228, 243) 0%, rgb(161, 174, 189) 60%);
+	height: 40px !important;
+    
+}
+#caixabotoes{
+    margin-bottom: 10px;
+}
+
+#frmcadDepartamento
+{
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 12px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 12px; 
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 12px;
+}
+#btn_login_arquiv{
+    margin-top:32px;
+    margin-left:20px;   
+}
+#btn_limpa_arquiv{
+    margin-top:32px;
+    margin-left:20px;   
+}
+nav#navbar-scroll{
+    background-color: pink;
+}
+#navbar-scroll
+{
+    /*display: inline;*/
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+   box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn-sulasuccess {
+  color: #000;
+ background-color: rgb(103,180,239,0.7);
+
+  border-color: #eee;
+
+}
+.btn-sulasuccess:hover,
+.btn-sulasuccess:focus,
+.btn-sulasuccess.focus,
+.btn-sulasuccess:active,
+.btn-sulasuccess.active,
+.open > .dropdown-toggle.btn-sulasuccess {
+  color: #fff;
+  font:bold;
+  background-color: rgb(103,180,239,0.6);
+
+  border-color: #fff;
+}
+.btn-sulasuccess:active,
+.btn-sulasuccess.active,
+.open > .dropdown-toggle.btn-sulasuccess {
+  background-image: none;
+}
+.btn-sulasuccess.disabled,
+.btn-sulasuccess[disabled],
+fieldset[disabled] .btn-sulasuccess,
+.btn-sulasuccess.disabled:hover,
+.btn-sulasuccess[disabled]:hover,
+fieldset[disabled] .btn-sulasuccess:hover,
+.btn-sulasuccess.disabled:focus,
+.btn-sulasuccess[disabled]:focus,
+fieldset[disabled] .btn-sulasuccess:focus,
+.btn-sulasuccess.disabled.focus,
+.btn-sulasuccess[disabled].focus,
+fieldset[disabled] .btn-sulasuccess.focus,
+.btn-sulasuccess.disabled:active,
+.btn-sulasuccess[disabled]:active,
+fieldset[disabled] .btn-sulasuccess:active,
+.btn-sulasuccess.disabled.active,
+.btn-sulasuccess[disabled].active,
+fieldset[disabled] .btn-sulasuccess.active {
+  background-color: rgb(103,180,239,0.7);
+  border-color: #ddd;
+}
+.btn-sulasuccess .badge {
+  color: #5cb85c;
+  background-color: #000;
+}
+@media only screen and (min-width: 800px) {
+    #footer{
+      margin-bottom: 15px;
+    } 
+    #frmcadDocumento{
+        min-height: 400px;
+        height: auto;
+    }
+
+}
+
+
