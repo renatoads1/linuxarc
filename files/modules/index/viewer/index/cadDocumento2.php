@@ -53,7 +53,7 @@ $modelo       = $f->createBasic_select("modelo","","Modelo de Documento:&nbsp;")
 foreach ($resultm as $key=>$value){
         $qmod->addFieldOptionOpt($modelo,$value['moddesc'],$value['modcod']);
     }
-$numero_doc = $f->createBasic_number("numero_doc","","Nº Documento:&nbsp;");
+$numero_doc         = $f->createBasic_number("numero_doc","","Nº Documento:&nbsp;");
 $obs            = $f->createBasic_textArea("obs","","OBS.:&nbsp;");
 $usuario_qarquivou         = $f->createBasic_text("usuario_qarquivou","","Usuarioarquivo?????:&nbsp;");
 $nivelacesso             = $f->createBasic_text("nivelacesso","","Nível de acesso??????:&nbsp;");
@@ -62,7 +62,6 @@ $caminho           = $f->createBasic_fileupload("caminho","","Caminho do Arquivo
 $caminho['callBackOk'] = "uploadok";
 $caminho['callBackError'] = "sendScannedDocsCbError";
 $caminho['callBackProgress'] = "sendScannedDocsCbProgress";
-$caminho["options"]["multiple"]="";
 $dtemissao		= $f->createBasic_date("dtemissao","","Data de Emissão:&nbsp;");
 $dtvencimento		= $f->createBasic_text("dtvencimento","","Data de Vencimento:&nbsp;");
 $dtpagamento		= $f->createBasic_text("dtpagamento","","Data de Pagamento:&nbsp;");
@@ -78,8 +77,8 @@ foreach ($resultd as $key=>$value){
         $qdep->addFieldOptionOpt($iddepartamento,$value['departamento'],$value['id']);
     }
 $contabilizado	= $f->createBasic_select("contabilizado","","Contabilizado:&nbsp;");
-$qdep->addFieldOptionOpt($contabilizado,"Não","N");
 $qdep->addFieldOptionOpt($contabilizado,"Sim","S");
+$qdep->addFieldOptionOpt($contabilizado,"Não","N");
 $body="";
 $body .="<div  class='row col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0'>";
 $body .="<form id='frmcadDocumento' class='col-lg-12'>";

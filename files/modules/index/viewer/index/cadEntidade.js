@@ -1,17 +1,20 @@
 $(document).ready(function(){
-    
+
 });
 //funcoes
 function btn_limpa_form(frm){
     $( "#"+frm ).append($( "input" ).map(function(){
     $(this).val("");
-  }).get().join( ", " ) );
+  }).get().join( ", " ));
 }
+
+//excluirEntidade() -> public/js/todos.js
 
 function btn_save_form(frm){
     var action = frm.slice(3);
-    var inputs = $("#"+frm).serializeArray(); 
-  
+    //envia como array de objetos
+    var inputs = $("#"+frm).serializeArray();
+
  $.staAjaxJSON(url_raiz_empresa+"index/index/"+action,{dados:inputs},{
             fncSuccess: data => location.href = url_raiz_empresa+"index/index/"+action,
 			fncError: data => $.staDialog({

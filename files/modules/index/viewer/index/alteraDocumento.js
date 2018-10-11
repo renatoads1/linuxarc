@@ -86,14 +86,11 @@ function btn_limpa_form(frm){
 function btn_save_form(frm){
     var action = frm.slice(3);
     var inputs = $("#"+frm).serializeArray();
-    var nomearquivos = Array.from(field_caminho.files).map(arquivo=>arquivo.name);
-    var tamanho = nomearquivos.length;
+    var arquivocaminho = field_caminho.files[0].name;
     var tam =  inputs.length;
-   
-    for(i=0;i<tamanho;i++){
-        inputs[tam+1] = {'name':'caminho','value':nomearquivos[i]};
-        //aqui 
-          $.staAjaxJSON(url_raiz_empresa+"index/index/"+action,{dados:inputs},{
+    inputs[tam+1] = {'name':'caminho','value':arquivocaminho};
+
+  $.staAjaxJSON(url_raiz_empresa+"index/index/"+action,{dados:inputs},{
             fncSuccess: data => location.href = url_raiz_empresa+"index/index/"+action,
 			fncError: data => $.staDialog({
 					'title': 'Erro',
@@ -108,15 +105,21 @@ function btn_save_form(frm){
 					},
 					'showTitle': false,
 					'open': true
-				}),
-                fncFailed: function(e){
-                    //alert(e.statusText);
-                    location.reload();
-                }
+				}),fncFailed: (xhr, ajaxOptions, thrownError) => $.staDialog({
+					'title': 'Erro',
+					'text': 'Não foi possível entrar em contato com o servidor',
+					'type': 'danger',
+					'buttons': {
+						btClose: {
+							text: 'OK',
+							action: () => $.staDialog('close'),
+							type: 'default'
+						}
+					},
+					'showTitle': false,
+					'open': true
+				})
         });
-        
-        //fim        
-    }
 
 }
 

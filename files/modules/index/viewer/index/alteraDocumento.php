@@ -5,10 +5,17 @@ use files\database\qCvf;
 use files\database\qModelo;
 use files\database\qDepartamento;
 use files\database\qBancodedados;
+use files\database\qArquivo;
 use \files\menu\padrao as menu_padrao;
 use files\lib\auth;
+if(isset($_GET["id"])){
+    $idDoc = $_GET["id"];
+}else{
+    $idDoc = "-";
+}
 $usuarioLogado = $this->getSession()['aut']['usuario'];
 $nomefantasia = ID_EMPRESA;
+$qArqui = new qArquivo();   
 $qBan = new qBancodedados();
 $qcvf = new qCvf();
 $qmod = new qModelo();
@@ -42,7 +49,7 @@ $idBancos = intval($idBancos);
 $cliente = $f->createBasic_number("cliente",$idBancos,"Empresa:&nbsp;");
 //$qdep->addFieldOption($cliente,["disable"=>"disabled"]);
 //puchar tabela tipo entidades
-$tpentidade           = $f->createBasic_select("tpentidade","","Tipo Entidade:&nbsp;");
+$tpentidade  = $f->createBasic_select("tpentidade","","Tipo Entidade:&nbsp;");
 //puchar tabela cvf
 $documento_de_quem   = $f->createBasic_select("documento_de_quem","","Dono do Documento:&nbsp;");
 //carrega o select de tipos de entidade
@@ -53,16 +60,16 @@ $modelo       = $f->createBasic_select("modelo","","Modelo de Documento:&nbsp;")
 foreach ($resultm as $key=>$value){
         $qmod->addFieldOptionOpt($modelo,$value['moddesc'],$value['modcod']);
     }
-$numero_doc = $f->createBasic_number("numero_doc","","Nº Documento:&nbsp;");
+$numero_doc         = $f->createBasic_number("numero_doc","","Nº Documento:&nbsp;");
 $obs            = $f->createBasic_textArea("obs","","OBS.:&nbsp;");
 $usuario_qarquivou         = $f->createBasic_text("usuario_qarquivou","","Usuarioarquivo?????:&nbsp;");
 $nivelacesso             = $f->createBasic_text("nivelacesso","","Nível de acesso??????:&nbsp;");
 //input upload de documentos
-$caminho           = $f->createBasic_fileupload("caminho","","Caminho do Arquivo:&nbsp;",URL_RAIZ_EMPRESA."/index/index/cadDocumentoFileUpload","{initUpload}");
+//$caminho           = $f->createBasic_fileupload("caminho","","Caminho do Arquivo:&nbsp;",URL_RAIZ_EMPRESA."/index/index/cadDocumentoFileUpload","{initUpload}");
 $caminho['callBackOk'] = "uploadok";
 $caminho['callBackError'] = "sendScannedDocsCbError";
 $caminho['callBackProgress'] = "sendScannedDocsCbProgress";
-$caminho["options"]["multiple"]="";
+
 $dtemissao		= $f->createBasic_date("dtemissao","","Data de Emissão:&nbsp;");
 $dtvencimento		= $f->createBasic_text("dtvencimento","","Data de Vencimento:&nbsp;");
 $dtpagamento		= $f->createBasic_text("dtpagamento","","Data de Pagamento:&nbsp;");
@@ -74,16 +81,17 @@ $localizacao	= $f->createBasic_text("localizacao","","Localização Física do D
 $iddepartamento	= $f->createBasic_select("iddepartamento","","Departamento:&nbsp;");
 
 $usuario_qarquivou	= $f->createBasic_hidden("usuario_qarquivou",$usuarioLogado,"usuario_qarquivou:&nbsp;");
+
 foreach ($resultd as $key=>$value){
         $qdep->addFieldOptionOpt($iddepartamento,$value['departamento'],$value['id']);
     }
 $contabilizado	= $f->createBasic_select("contabilizado","","Contabilizado:&nbsp;");
-$qdep->addFieldOptionOpt($contabilizado,"Não","N");
 $qdep->addFieldOptionOpt($contabilizado,"Sim","S");
+$qdep->addFieldOptionOpt($contabilizado,"Não","N");
 $body="";
 $body .="<div  class='row col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0'>";
 $body .="<form id='frmcadDocumento' class='col-lg-12'>";
-$body .="<div id='cabecalio' class='col-lg-12'><h3>Cadastro de Documento</h3></div>";
+$body .="<div id='cabecalio' class='col-lg-12'><h3>Altera de Documento id=".$idDoc."</h3></div>";
 $body .="<div class='row col-lg-12'>";
 $body .="<hr>";
 $body .="<div class='row col-lg-6'>";
@@ -91,7 +99,7 @@ $body .= $f->divCampo("documento_de_quem",$documento_de_quem,"col-lg-12");
 $body .= $f->divCampo("modelo",$modelo,"col-lg-12");
 $body .= $f->divCampo("numero_doc",$numero_doc,"col-lg-12");
 $body .= $f->divCampo("obs",$obs,"col-lg-12");
-$body .= $f->divCampo("caminho",$caminho,"col-lg-12");
+//$body .= $f->divCampo("caminho",$caminho,"col-lg-12");
 $body .= $f->divCampo("usuario_qarquivou",$usuario_qarquivou,"col-lg-12");
 $body .="</div>";
 $body .="<div class='row col-lg-6'>";
