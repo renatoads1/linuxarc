@@ -4,9 +4,6 @@ html{
 body {
   height: 100vh;
 }
-/*renato*/
-
-/*renato*/
 div.panel.panel-primary > .panel-heading {
 	color: white;
 }
@@ -52,6 +49,7 @@ input[type=file].cloak {
 #navbar-scroll {
 	min-height: 30px;
 }
+
 span.shadow {
 	background-color: #565656;
 	color: transparent;
@@ -1005,8 +1003,8 @@ input[type=file] {
 }
 .input-file-helper {
 	position: absolute;
-	top: 30px;
-	left: 95px;
+	top: 36px;
+	left: 110px;
 	z-index: 1;
 	cursor: pointer;
 	display: block;
@@ -1087,7 +1085,7 @@ td.rightAlign{
 	height: 40px;
 }
 nav#navbar-scroll {
-	background: #dededede;
+	background: #dedede;
 	height: 40px !important;
 	position: fixed;
 	top: 0px;
@@ -1149,14 +1147,30 @@ li.dropdown.open > a {
 nav .navbar-brand > .name-default {
 	color: rgba(255,255,255);
 }
+/*renato*/
+.name-default{
+    color: red;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+    animation-name: gradentloop;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes gradentloop {
+    0% {color: red;}
+    25% {color: blue;}
+    75% {color: yellow;}
+    100% {color: red;}
+}
 
-
-
-
-
-
-
-
+/* Standard syntax */
+@keyframes gradentloop {
+   0% {color: rgba(100,100,100,0.9);}
+    25% {color: rgba(200,200,200,0.9);}
+    75% {color: rgba(150,150,150,0.9);}
+    100% {color: rgba(100,100,100,0.9);}
+}
+/*renato*/
 .label.label-default.label-filter {
 	display: inline-block;
 	height: 32px;
@@ -1402,37 +1416,6 @@ nav > .container > .navbar-header button.navbar-toggle {
 	background-color: currentColor;
 }
 /*renato*/
-#filter_staGridgQuadroLanc{
-    width: 100% !important;
-	max-width: unset !important;
-	float: none !important;
-}
-#staGridgQuadroLanc .panel-heading > div:not(:last-child) {
-	float: none !important;
-}
-#btn_dropdown_staGridqQuadroLanc_tipo {
-	border-radius: 0;
-}
-#filter_staGridgQuadroLanc_button {
-	border-color: rgb(146, 146, 146);
-    border-radius: 0 3px 3px 0;
-    
-}
-#filter_staGridqQuadroLanc_input{
-   
-}
-#btn_dropdown_staGridgQuadroLanc_field{
-    border-color:0px solid rgb(146, 146, 146);
-    height: 30px;
-}
-#btn_dropdown_staGridgQuadroLanc_tipo{
-    border-color:0px solid rgb(146, 146, 146);
-    height: 30px;
-}
-#filter_staGridgQuadroLanc_button{
-    border-color:0px solid rgb(146, 146, 146);
-    height: 30px;
-}
 .contedor{
     min-width: 68px;
 }
@@ -1452,3 +1435,5 @@ nav .navbar-header .pwa-only > button {
 	background-color: #e2e2e2;
 	box-shadow: 0 0 2px 2px #e2e2e2;
 }
+
+
