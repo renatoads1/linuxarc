@@ -63,8 +63,8 @@
 			$campos["tpentidade"] = $form->createBasic_text("tpentidade", "", "tpentidade");
 			$campos["documento_de_quem"] = $form->createBasic_text("documento_de_quem", "", "documento_de_quem");
 			$campos["modelo"] = $form->createBasic_number("modelo", "", "modelo", true, "", "", "");
-			$campos["numero_doc"] = $form->createBasic_number("numero_doc", "", "numero_doc");
-			$campos["obs"] = $form->createBasic_textArea("obs", "", "obs");
+			$campos["numero_doc"] = $form->createBasic_text("numero_doc", "", "numero_doc");
+			$campos["obs"] = $form->createBasic_text("obs", "", "obs");
 			$campos["usuario_qarquivou"] = $form->createBasic_text("usuario_qarquivou", "", "usuario_qarquivou");
 			$campos["nivelacesso"] = $form->createBasic_number("nivelacesso", "", "nivelacesso", true, "", "", "");
 			$campos["caminho"] = $form->createBasic_text("caminho", "", "caminho");
@@ -78,10 +78,10 @@
 			$campos["localizacao"] = $form->createBasic_text("localizacao", "", "localizacao");
 			$campos["iddepartamento"] = $form->createBasic_number("iddepartamento", "", "iddepartamento", true, "", "", "");
 			$campos["contabilizado"] = $form->createBasic_text("contabilizado", "N", "contabilizado");
-            $campos["baixado"] = $form->createBasic_text("baixado", "N", "baixado");
 			// FIM Listar Campos
-             
+
 			// Personalizar
+
 			$this->processModel($campos, $dados);
 			return $campos;
 		}

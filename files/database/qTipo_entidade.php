@@ -60,10 +60,14 @@
 			$campos["tpentidade"] = $form->createBasic_text("tpentidade", "", "tpentidade");
 			$campos["descricao"] = $form->createBasic_text("descricao", "", "descricao");
 			// FIM Listar Campos
-
 			// Personalizar
-
-			$this->processModel($campos, $dados);
+            $campos["tpentidade"]["options"]["maxlength"] = 3;//até 3 numeros
+            $campos["tpentidade"]["options"]["pattern"] = "[a-zA-Z]+";
+            $campos["descricao"]["options"]["maxlength"] = 50;
+            $campos["descricao"]["options"]["pattern"] = "[a-zA-Z]+";//apenas letras
+			
+            //fim
+            $this->processModel($campos, $dados);
 			return $campos;
 		}
 	}

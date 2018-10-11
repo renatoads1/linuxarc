@@ -57,16 +57,25 @@
 			}
 			// Fim Pegar dados
 			// Listar Campos
-			$campos["modcod"] = $form->createBasic_number("modcod", "", "modcod", true, "", "", "");
+			$campos["modcod"] = $form->createBasic_text("modcod", "", "modcod");
 			$campos["moddesc"] = $form->createBasic_text("moddesc", "", "moddesc");
-			$campos["garantia"] = $form->createBasic_text("garantia", "0", "garantia");
+			$campos["garantia"] = $form->createBasic_text("garantia", "", "garantia");
 			$campos["vlr_mao_obra"] = $form->createBasic_number("vlr_mao_obra", "0.00", "vlr_mao_obra", true, "", "", "");
 			$campos["vlr_visita"] = $form->createBasic_number("vlr_visita", "0.00", "vlr_visita", true, "", "", "");
 			$campos["hierarquia"] = $form->createBasic_text("hierarquia", "", "hierarquia");
 			$campos["origem"] = $form->createBasic_text("origem", "", "origem");
 			// FIM Listar Campos
+			
+            // Personalizar
 
-			// Personalizar
+            $campos["moddesc"]["options"]["maxlength"] = 50;
+            $campos["moddesc"]["options"]["pattern"] = "^[a-zA-Z]+";
+            $campos["garantia"]["options"]["maxlength"] = 3;
+            $campos["garantia"]["options"]["pattern"] = "^[0-9]+";
+            $campos["vlr_mao_obra"]["options"]["pattern"] = "[^0-9]";
+            $campos["vlr_visita"]["options"]["pattern"] = "[^0-9]";
+            $campos["hierarquia"]["options"]["maxlength"] = 10;
+            $campos["origem"]["options"]["maxlength"] = 1;
 
 			$this->processModel($campos, $dados);
 			return $campos;
