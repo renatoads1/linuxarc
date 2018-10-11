@@ -1,13 +1,11 @@
 
-/* global url_raiz, id_user, nome_user, dvUsuarioConectado, menuTop */
-
 function login(user, pass) {
 	$.staAjaxJSON(
 		url_raiz + 'index/index/login', {
 			user,
 			pass
 		},
-		{
+		{  
 			fncSuccess: data => location.href = data.data.href,
 			fncError: data => $.staDialog({
 					'title': 'Erro',
@@ -42,40 +40,10 @@ function login(user, pass) {
 }
 
 function logout() {
-	$.staAjaxJSON(
-		url_raiz + 'index/index/logout', {},
-		{
-			fncSuccess: data => location.href = data.data.href,
-			fncError: data => $.staDialog({
-					'title': 'Erro',
-					'text': data.strError,
-					'type': 'danger',
-					'buttons': {
-						btClose: {
-							text: 'OK',
-							action: () => $.staDialog('close'),
-							type: 'default'
-						}
-					},
-					'showTitle': false,
-					'open': true
-				}),
-			fncFailed: (xhr, ajaxOptions, thrownError) => $.staDialog({
-					'title': 'Erro',
-					'text': 'Não foi possível entrar em contato com o servidor',
-					'type': 'danger',
-					'buttons': {
-						btClose: {
-							text: 'OK',
-							action: () => $.staDialog('close'),
-							type: 'default'
-						}
-					},
-					'showTitle': false,
-					'open': true
-				})
-		}
-	);
+    //criar ajax para limpar sessao
+    $.post(url_raiz_empresa+"index/index/logout","","");
+    location.href = url_raiz;
+   
 }
 
 function showDadosUsuario() {
@@ -134,15 +102,6 @@ menuTop.showMenu = (id) => {
 	}).popover('show');
 };
 
-/**
- * Roda um ajax para CRUD
- *
- * @param {string} action Action que será chamada
- * @param {array} label Verbo da ação [no infinitivo, no passado]
- * @param {Object} data Parâmetros para o POST
- * @param {string} type Nome do que está sendo alterado
- * @returns {undefined}
- */
 function ajaxQuickCRUD(action, label, data, type) {
 	let name = type.split("").map((m, i) => i == 0 ? m.toUpperCase() : m).join("");
 	$.staAjaxJSON(

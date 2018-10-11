@@ -2569,9 +2569,13 @@ $(document).keyup(function(e){
 	}
 	keystrokes[keyCode] = false;
 });
-
-
-
+//renato
+function excluirEntidade(id){
+    $.get(url_raiz_empresa+"index/index/excluirEntidade", {id:id}, function(resposta){
+        window.location.reload();
+    });
+}
+//renato
 
 
 
